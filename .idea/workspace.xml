@@ -1,7 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ca04e78-cae1-4668-abbc-a8c6ea6b8b3e" name="Default Changelist" comment="" />
+    <list default="true" id="6ca04e78-cae1-4668-abbc-a8c6ea6b8b3e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bestellung/Loesungen-Antworten_SQL_zu_Bestellungen__Uebung_von_heute.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bestellung/aufgaben_join_bestellung_original.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bestellung/bestellung.mwb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bestellung/bestellung.mwb.bak" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datum/uebungen_datum_lösungen.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/personal/query_exercises_urs.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/winestore/Aufgaben_Fragen zu Winestore.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/winestore/ERD_Winstore_zu_Übungen_Datei.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bestellung/aufgaben_join_bestellung.sql" beforeDir="false" afterPath="$PROJECT_DIR$/bestellung/aufgaben_join_bestellung.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/winestore/winestore.mwb" beforeDir="false" afterPath="$PROJECT_DIR$/winestore/winestore.mwb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/winestore/winestore.mwb.bak" beforeDir="false" afterPath="$PROJECT_DIR$/winestore/winestore.mwb.bak" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,23 +43,53 @@
   <component name="ComposerSettings">
     <execution />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="XAMPP PHP 7.4.1" />
   <component name="ProjectId" id="1jJZfSCBFLmzRWow7qWlSsE3tak" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DBE.Init.BalloonShown" value="true" />
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/bestellung" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="terminal" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/bestellung" />
     </key>
+  </component>
+  <component name="RunManager" selected="Database Script.aufgaben_join_bestellung.sql">
+    <configuration name="aufgaben_join_bestellung.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
+      <script-file value="$PROJECT_DIR$/bestellung/aufgaben_join_bestellung.sql" />
+      <script-mode>FILE</script-mode>
+      <data-source id="409eb77a-6453-4791-a649-c239b5393744" />
+      <method v="2" />
+    </configuration>
+    <configuration name="console.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
+      <script-file value="$APPLICATION_CONFIG_DIR$/consoles/db/1d6e792e-7f8f-445f-a7ec-8797efa87f4e/console.sql" />
+      <script-mode>FILE</script-mode>
+      <data-source id="409eb77a-6453-4791-a649-c239b5393744" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Database Script.aufgaben_join_bestellung.sql" />
+        <item itemvalue="Database Script.console.sql" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -41,10 +104,62 @@
       <workItem from="1604738654054" duration="2045000" />
       <workItem from="1604742146705" duration="1376000" />
       <workItem from="1604756205735" duration="99000" />
+      <workItem from="1604758846703" duration="617000" />
+      <workItem from="1605947072605" duration="1362000" />
+      <workItem from="1606125027349" duration="2691000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="493" y="322" width="792" height="527" key="#Notifications" timestamp="1606124798196">
+      <screen x="0" y="23" width="1536" height="937" />
+    </state>
+    <state x="493" y="322" width="792" height="527" key="#Notifications/0.23.1536.937@0.23.1536.937" timestamp="1606124798196" />
+    <state x="117" y="328" key="#SQL_Dialects" timestamp="1604758903774">
+      <screen x="0" y="23" width="1536" height="937" />
+    </state>
+    <state x="117" y="328" key="#SQL_Dialects/0.23.1536.937@0.23.1536.937" timestamp="1604758903774" />
+    <state x="368" y="157" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606124915869">
+      <screen x="0" y="23" width="1536" height="937" />
+    </state>
+    <state x="368" y="157" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1536.937@0.23.1536.937" timestamp="1606124915869" />
+    <state width="1494" height="250" key="GridCell.Tab.0.bottom" timestamp="1606147811744">
+      <screen x="0" y="23" width="1536" height="937" />
+    </state>
+    <state width="1494" height="250" key="GridCell.Tab.0.bottom/0.23.1536.937@0.23.1536.937" timestamp="1606147811744" />
+    <state width="1494" height="250" key="GridCell.Tab.0.center" timestamp="1606147811744">
+      <screen x="0" y="23" width="1536" height="937" />
+    </state>
+    <state width="1494" height="250" key="GridCell.Tab.0.center/0.23.1536.937@0.23.1536.937" timestamp="1606147811744" />
+    <state width="1494" height="250" key="GridCell.Tab.0.left" timestamp="1606147811743">
+      <screen x="0" y="23" width="1536" height="937" />
+    </state>
+    <state width="1494" height="250" key="GridCell.Tab.0.left/0.23.1536.937@0.23.1536.937" timestamp="1606147811743" />
+    <state width="1494" height="250" key="GridCell.Tab.0.right" timestamp="1606147811744">
+      <screen x="0" y="23" width="1536" height="937" />
+    </state>
+    <state width="1494" height="250" key="GridCell.Tab.0.right/0.23.1536.937@0.23.1536.937" timestamp="1606147811744" />
+    <state x="269" y="130" key="SettingsEditor" timestamp="1606148094615">
+      <screen x="0" y="23" width="1536" height="937" />
+    </state>
+    <state x="269" y="130" key="SettingsEditor/0.23.1536.937@0.23.1536.937" timestamp="1606148094615" />
   </component>
 </project>
