@@ -54,15 +54,32 @@ FROM kunde k
 JOIN best b
 ON k.kid = b.kid;
 
+SELECT COUNT(DISTINCT kid)
+FROM kunde
+JOIN best b using (kid);
 
+select count(distinct kid) from best;
 
 
 # 4. Liste der Kunden mit der Anzahl Bestellungen pro Kunde
-SELECT DISTINCT k.kname, COUNT(b.bid)
+# sorted by name > vname
+SELECT k.kid, k.kname, k.kvname, COUNT(b.bid) AS Bestellmenge
 FROM kunde k
-JOIN best b
-ON k.kid = b.kid
-GROUP BY k.kname;
+LEFT JOIN best b on k.kid = b.kid
+GROUP BY k.kid, k.kname, k.kvname
+ORDER BY k.kname, k.kvname;
+
+# sorted by Bestellmenge
+SELECT k.kid, k.kname, k.kvname, COUNT(b.bid) AS Bestellmenge
+FROM kunde k
+LEFT JOIN best b on k.kid = b.kid
+GROUP BY k.kid, k.kname, k.kvname
+ORDER BY Bestellmenge DESC;
+
+select kid, kname, count(*) from kunde join best using (kid) group by kid; # ohne Kunden ohne Bestellung
+
+select kid, kname, count(bid) from kunde left join best using (kid) group by kid; # mit Kunden ohne Bestellung
+
 
 # 5. Kundenliste von allen Kunden, die nie eine Bestellung abgesetzt haben.
 SELECT *
