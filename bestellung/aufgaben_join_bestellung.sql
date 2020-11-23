@@ -82,11 +82,19 @@ select kid, kname, count(bid) from kunde left join best using (kid) group by kid
 
 
 # 5. Kundenliste von allen Kunden, die nie eine Bestellung abgesetzt haben.
-SELECT *
+SELECT k.kname, k.kvname, b.bid
 FROM kunde k
-JOIN best b
+LEFT JOIN best b ON k.kid = b.kid
+WHERE b.bid IS NULL
+ORDER BY k.kname, k.kvname;
+
+SELECT k.kname, k.kvname, b.bid
+FROM kunde k
+LEFT JOIN best b ON k.kid = b.kid
 WHERE b.bid IS NULL;
-### leerer return!!!
+
+select kid, kname from kunde left join best using (kid) where bid is null;
+
 
 # 6. Liste (Kundenname, bid) von allen Bestellungen bei denen von der Artikelkategorie 'Home' bestellt wurde.
 SELECT k.kname AS Kundenname, b.bid AS Bestell_ID
