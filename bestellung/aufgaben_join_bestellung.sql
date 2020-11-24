@@ -104,23 +104,65 @@ JOIN bpos bp ON b.bid = bp.bid
 JOIN artikel a ON a.aid = bp.aid
 WHERE akat = 'Home';
 
-# 7. Liste der verkauften Mengen pro Artikel (Artikel-ID, Artikelbezeichnung, Menge)
-SELECT DISTINCT(a.aid) AS Artikel_ID, a.abez AS Artikelbezeichnung, SUM(bp.menge) AS Menge
+SELECT k.kname, k.kvname, b.bid, a.akat
 FROM kunde k
 JOIN best b ON k.kid = b.kid
 JOIN bpos bp ON b.bid = bp.bid
-JOIN artikel a ON a.aid = bp.aid
+JOIN artikel a ON bp.aid = a.aid
+WHERE a.akat = 'Home'
+ORDER BY k.kname, k.kvname;
+
+select kid, kname, bid from kunde join best using (kid)
+                                  join bpos  using (bid)
+                                  join artikel using (aid)
+where akat = 'home';
+
+
+# 7. Liste der verkauften Mengen pro Artikel (Artikel-ID, Artikelbezeichnung, Menge)
+SELECT DISTINCT(a.aid) AS Artikel_ID, a.abez AS Bezeichnung, SUM(bp.menge) AS Menge
+FROM best b
+JOIN bpos bp ON b.bid = bp.bid
+JOIN artikel a ON bp.aid = a.aid
 GROUP BY a.aid
 ORDER BY Menge DESC;
+
+SELECT DISTINCT(a.aid) AS Artikel_ID, a.abez AS Bezeichnung, SUM(bp.menge) AS Menge
+FROM artikel a
+JOIN bpos bp ON a.aid = bp.aid
+GROUP BY a.aid
+ORDER BY Menge DESC;
+
+select aid,abez, sum(menge) from artikel join bpos using(aid) group by aid;
+
 
 # 8. Gesamtes Bestellvolumen
 SELECT sum(menge) AS gesamtes_bestellvolumen
 FROM bpos;
 
+SELECT SUM(menge)
+FROM bpos;
+
+SELECT sum(bp.menge * a.apreis) # in Franken und Rappen
+FROM bpos bp
+JOIN artikel a ON bp.aid = a.aid;
+
+select sum(menge) from bpos;
+
+select sum( apreis * menge) from bpos join artikel using (aid); # in Franken und Rappen
+
+
 # 9. Liste des Bestellvolumens pro Kunde (Kundenname, Bestellvolumen).
-SELECT * 
+SELECT k.kid, k.kname, k.kvname, sum(bp.menge)
 FROM kunde k
-JOIN bpos bp;
+JOIN best b ON k.kid = b.kid
+JOIN bpos bp ON b.bid = bp.bid
+GROUP BY k.kid, bp.menge
+ORDER BY bp.menge DESC;
+
+select kid, kname, sum(menge) from kunde join best using (kid)
+                                         join bpos using (bid)
+group by kid;
+
 
 # 10. Gesamter Bestellwert des Kunden Morger
 
