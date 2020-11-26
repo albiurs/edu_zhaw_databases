@@ -165,15 +165,84 @@ group by kid;
 
 
 # 10. Gesamter Bestellwert des Kunden Morger
+SELECT k.kid, k.kname, k.kvname, SUM(bp.menge * a.apreis)
+FROM kunde k
+JOIN best b ON k.kid = b.kid
+JOIN bpos bp ON b.bid = bp.bid
+JOIN artikel a ON a.aid = bp.aid
+WHERE k.kname = 'morger'
+GROUP BY k.kid;
+
+select kid, kname, kvname, sum(menge * apreis) from kunde join best using (kid)
+                                                          join bpos using (bid)
+                                                          join artikel using (aid)
+where kname = 'morger'
+group by kid;
 
 
 # 11. Liste (Artikelkategorie, Summe der jeweiligen bestellten Artikelmengen pro Kategorie)
+SELECT a.akat, sum(bp.menge)
+FROM artikel a
+JOIN bpos bp ON a.aid = bp.aid
+GROUP BY a.akat;
+
+select akat, sum(menge) from artikel join bpos using (aid)
+group by akat;
 
 
 # 12. Der teuerste Artikel mit dem zugehörigen Preis
+SELECT max(apreis)
+FROM artikel;       # nur Preis
+
+SELECT aid, abez, apreis
+FROM artikel
+where apreis = (
+    SELECT max(apreis)
+    FROM artikel
+);
+
+WITH max_preis_query AS (
+    SELECT max(apreis) AS max_preis
+    FROM artikel
+)
+SELECT aid, abez, m.max_preis
+FROM max_preis_query m
+JOIN artikel a
+WHERE a.apreis = m.max_preis;
+
+select aid,abez, max(apreis) from artikel; # !!!!!  # ais und abez haben mit dem max(apreis) NICHTS zu tun !!!!
+select apreis from artikel where abez = 'blumenvase';
 
 
 # 13. Artikel der mengenmässig am meisten bestellt worden ist
+SELECT *
+FROM artikel a
+JOIN bpos b on a.aid = b.aid;
+
+SELECT a.aid, a.abez, SUM(bp.menge)
+FROM artikel a
+JOIN bpos bp on a.aid = bp.aid
+GROUP BY a.aid;
+
+SELECT a.aid, a.abez, SUM(bp.menge) AS sum_menge
+FROM artikel a
+JOIN bpos bp ON bp.aid = a.aid
+GROUP BY a.aid
+HAVING sum_menge = (
+    SELECT max(sum_menge_sub) AS max_sum_menge
+    FROM (
+         SELECT SUM(bp.menge) AS sum_menge_sub
+         FROM artikel a
+         JOIN bpos bp on a.aid = bp.aid
+         GROUP BY a.aid
+     ) AS sum_sm
+);
+
+select aid, abez from artikel join bpos using (aid) group by aid
+having sum(menge) =
+       (select max(hugo) from
+           (select sum(menge) hugo from bpos group by aid) dummytable);
+
 
 
 # 14. Liste der Kunden mit der Gesamtanzahl ihrer Bestellpositionen (auf all ihren Bestellungen!)
