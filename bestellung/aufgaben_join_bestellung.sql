@@ -244,12 +244,49 @@ having sum(menge) =
            (select sum(menge) hugo from bpos group by aid) dummytable);
 
 
+# Lösungsweg
+############
+
+# Welche Tabellen werden gebraucht?
+# Wo sind Mengen, Artikel, Bestellpos?
+
+SELECT sum(menge) from bpos;
+
+SELECT aid, sum(menge) from bpos group by aid;
+
+SELECT sum(menge) from bpos group by aid;
+
+#(SELECT sum(menge) from bpos group by aid) dummy_table;
+
+select max(hh) from
+                    (SELECT sum(menge) hh from bpos group by aid) dummy_table;
+
+select aid, abez from artikel join bpos using (aid) group by aid
+having sum(menge) =
+(select max(hh) from
+                    (SELECT sum(menge) hh from bpos group by aid) dummy_table);
+
 
 # 14. Liste der Kunden mit der Gesamtanzahl ihrer Bestellpositionen (auf all ihren Bestellungen!)
+SELECT *
+FROM kunde k
+JOIN best b ON k.kid = b.bid
+JOIN bpos bp ON b.bid = bp.bid;
+
+SELECT k.kid, k.kname, k.kvname, count(bp.aid) anz_bestellpos
+FROM kunde k
+JOIN best b ON k.kid = b.kid
+JOIN bpos bp ON b.bid = bp.bid
+GROUP BY k.kid
+ORDER BY anz_bestellpos DESC;
+
+select kid, kname, count(*) from kunde join best using (kid)
+                                       join bpos using (bid)
+group by kid;
 
 
 
-
+# Diverse Übungen während der Lektion:
 
 # LEFT JOIN
 SELECT * 
