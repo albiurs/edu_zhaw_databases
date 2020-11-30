@@ -1,7 +1,17 @@
 /* Aufgaben zu Winestore DB */
-Datum: 4.10.2020
-Autor: R. Zimmermann
------------------------------------------------------------------------------------------------------------------*/
+#Datum: 4.10.2020
+#Autor: R. Zimmermann
+#-----------------------------------------------------------------------------------------------------------------*/
+
+SHOW DATABASES;
+USE winestore;
+SHOW TABLES;
+
+SELECT *
+FROM wine_type;
+
+
+
 # 1. Wie viele Kunden sind in der Datenbank registriert?
 
 

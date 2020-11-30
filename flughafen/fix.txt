@@ -1,0 +1,4 @@
+Flughafen-DB flicken für neuer Workbench-Versionen:
+
+- Suchen und ersetzen: utf8 -> utf8mb4
+- Mit Regex suchen und ersetzen (Klammern bei int und smallint entfernen): int\([0-9]*\) -> int
